@@ -1,4 +1,7 @@
 <?php
+# env indicator - useful when working on multiple environments
+#$conf['environment_indicator_overwritten_name'] = 'Local';
+#$conf['environment_indicator_overwritten_color'] = '#42b96a';
 # APC cache backend
 #$conf['apc_show_debug'] = TRUE;
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/apc/drupal_apc_cache.inc';
