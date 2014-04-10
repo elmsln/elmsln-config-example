@@ -1,6 +1,7 @@
 <?php
 # env indicator - useful when working on multiple environments
-#$conf['environment_indicator_overwritten_name'] = 'Local';
+#$conf['environment_indicator_overwrite'] = TRUE;
+#$conf['environment_indicator_overwritten_name'] = 'Dev: Local';
 #$conf['environment_indicator_overwritten_color'] = '#42b96a';
 # APC cache backend
 #$conf['apc_show_debug'] = TRUE;
