@@ -3,3 +3,4 @@ description = Examples specific Service integration package
 core = 7.x
 package = Examples
 dependencies[] = cis_connector
+dependencies[] = cis_example_utility
