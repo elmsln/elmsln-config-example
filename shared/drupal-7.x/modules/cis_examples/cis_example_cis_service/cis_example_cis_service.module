@@ -4,8 +4,6 @@
  * Code for the Example CIS Service.
  */
 
-include_once 'cis_example_cis_service.features.inc';
-
 /**
  * Implements hook_cis_section_list_alter().
  */
