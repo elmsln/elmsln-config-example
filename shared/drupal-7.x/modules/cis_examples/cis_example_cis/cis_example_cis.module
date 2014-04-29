@@ -208,7 +208,7 @@ function cis_example_cis_cis_service_instance_options_alter(&$options, $course, 
   $options['vset'][] = 'preprocess_css 1';
   $options['vset'][] = 'preprocess_js 1';
   // set the private files directory automatically, specific to course name
-  $options['vset'][] = 'file_private_path /var/www/drupal_priv/' . $course->field_machine_name[LANGUAGE_NONE][0]['value'];
+  $options['vset'][] = 'file_private_path /var/www/elmsln/config/private_files/' . $service->field_machine_name[LANGUAGE_NONE][0]['value'] . '/' . $course->field_machine_name[LANGUAGE_NONE][0]['value'];
   // for mooc enable these specific modifications to the university
   if ($service->field_distribution['und'][0]['value'] == 'mooc') {
     $options['en'][] = 'cis_example_mooc';
