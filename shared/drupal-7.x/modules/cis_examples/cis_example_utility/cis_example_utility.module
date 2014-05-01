@@ -95,12 +95,23 @@ function _cis_example_utility_lti_translation($lti_launch) {
     $lti[$key] = array();
     // set each element in the map
     foreach($map as $key2 => $map2) {
-      $lti[$key][$key2] = $lti_launch[$map2];
+      if (isset($lti_launch[$map2])) {
+        $lti[$key][$key2] = $lti_launch[$map2];
+      }
     }
-    // formulate callback
-    $callback = '_cis_example_utility_lti_process_' . $key;
     // call specific portion function processing
-    $callback($lti[$key]);
+    // check for course / section data prepopulation
+    if ($key == 'course' && isset($lti_launch['course']['machine_name'])) {
+      $lti['course'] = $lti_launch['course'];
+    }
+    elseif($key == 'section' && isset($lti_launch['section']['semester'])) {
+      $lti['section'] = $lti_launch['section'];
+    }
+    else {
+      // formulate callback
+      $callback = '_cis_example_utility_lti_process_' . $key;
+      $callback($lti[$key]);
+    }
   }
   return $lti;
 }
