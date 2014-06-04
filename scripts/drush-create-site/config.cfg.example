@@ -14,6 +14,7 @@ host='yu'
 emailending='youruni.edu'
 address='youruni.edu'
 serviceaddress='datayouruni.edu'
+serviceprefix='data.'
 protocol="https"
 #email that the site uses to send mail
 site_email=admin@$emailending
