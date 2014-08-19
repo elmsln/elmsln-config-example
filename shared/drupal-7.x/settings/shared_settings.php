@@ -4,6 +4,8 @@
 #$conf['environment_indicator_overwritten_name'] = 'Dev: Local';
 #$conf['environment_indicator_overwritten_color'] = '#42b96a';
 # APC cache backend
+# Comment this back in for apc super fast support, not all systems support this
+/*
 #$conf['apc_show_debug'] = TRUE;
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/apc/drupal_apc_cache.inc';
 # APC as default container, others are targetted per bin
@@ -23,8 +25,10 @@ $conf['cache_class_cache_token'] = 'DrupalAPCCache';
 $conf['cache_class_cache_views'] = 'DrupalAPCCache';
 $conf['cache_class_cache_path_breadcrumbs'] = 'DrupalAPCCache';
 $conf['cache_class_cache_path'] = 'DrupalAPCCache';
-
+*/
 # Filecache for ones that are big and don't change much
+# Comment this back in for filecache support, not all systems support this
+/*
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/filecache/filecache.inc';
 # use this for file systems that don't have shared memory
 #$conf['filecache_directory'] = '/var/www/elmsln/config/private_files/_filecache/' . $conf['cache_prefix'];
@@ -39,7 +43,7 @@ $conf['cache_class_cache_views_data'] = 'DrupalFileCache';
 $conf['cache_class_cache_page'] = 'DrupalFileCache';
 $conf['cache_class_cache_display_cache'] = 'DrupalFileCache';
 $conf['cache_class_cache_entity_node'] = 'DrupalFileCache';
-
+*/
 # Default DB for the ones that change too frequently and are small
 $conf['cache_default_class']    = 'DrupalDatabaseCache';
 # THIS MUST BE SERVED FROM DB FOR STABILITY
