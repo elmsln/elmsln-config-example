@@ -49,3 +49,11 @@ $conf['cache_default_class']    = 'DrupalDatabaseCache';
 # THIS MUST BE SERVED FROM DB FOR STABILITY
 $conf['cache_class_cache_cis_connector'] = 'DrupalDatabaseCache';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+
+// this is assuming all databases using this file operate off of default
+// this should always be true of ELMSLN connected systems but just be aware
+// of this in case your doing any prefixing or crazy stuff like connecting to
+// multiple databases
+$databases['default']['default']['init_commands'] = array(
+  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
+);
