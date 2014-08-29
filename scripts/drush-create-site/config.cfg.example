@@ -9,7 +9,7 @@ media_service_domain=media.services.YOURUNIT.edu
 online_domain=online.YOURUNIT.edu
 online_service_domain=online.services.YOURUNIT.edu
 
-university='YOURUNIT'
+university='youruniversityabrev'
 host='yu'
 emailending='YOURUNIT.edu'
 address='YOURUNIT.edu'
