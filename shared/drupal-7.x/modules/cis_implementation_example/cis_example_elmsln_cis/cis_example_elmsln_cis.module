@@ -4,22 +4,22 @@
  */
 function cis_example_elmsln_cis_cis_service_instance_options_alter(&$options, $course, $service) {
   // we centralize our watchdogs
-  $options['en'][] = 'cis_remote_watchdog';
+  //$options['en'][] = 'cis_remote_watchdog';
   // modules we require for all builds
   $options['en'][] = 'cis_example_elmsln_settings';
   $options['en'][] = 'cis_service_restws';
-  //TODO: update this list by hand for new users
-  $staff = _cis_example_elmsln_utility_user_list('staff');
-  $admins = _cis_example_elmsln_utility_user_list('admins');
+  // @todo update this list by hand for new users
+  //$staff = _cis_example_elmsln_utility_user_list('staff');
+  //$admins = _cis_example_elmsln_utility_user_list('admins');
   // add staff members to site
-  foreach ($staff as $member) {
-    $options['ucrt'][] = $member . ' --mail=' . $member . '@example.com';
-    $options['urol'][] = 'staff ' . $member;
-  }
+  //foreach ($staff as $member) {
+  //  $options['ucrt'][] = $member . ' --mail=' . $member . '@example.com';
+  //  $options['urol'][] = 'staff ' . $member;
+  //}
   // add admin member roles to site
-  foreach ($admins as $admin) {
-    $options['urol'][] = 'administrator ' . $admin;
-  }
+  //foreach ($admins as $admin) {
+  //  $options['urol'][] = 'administrator ' . $admin;
+  //}
 }
 
 /**
