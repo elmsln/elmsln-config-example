@@ -19,6 +19,11 @@ function cis_example_elmsln_settings_cis_service_registry() {
       'mail' => 'SERVICE_MOOC@example.com',
       'pass' => '',
       'instance' => TRUE,
+      'ssh' => array(
+        'options' => '-p 22',
+        'user' => 'username',
+        'host' => 'courses.example.com',
+      ),
     ),
     // cle distro instance called studio
     'cle' => array(
