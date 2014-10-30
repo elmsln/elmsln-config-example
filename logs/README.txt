@@ -1,0 +1,1 @@
+This is a location that ELMSLN can write its log info to. This is currently only used for tracking upgrades and providing information that can be reviewed in the event of an error during upgrade.
