@@ -1,14 +1,5 @@
-#university / institution deploying this instance
-#these values provide defaults for getting the system primed
-
-#domains used for elmsln.
-courses_domain=courses.YOURUNIT.edu
-courses_service_domain=courses.services.YOURUNIT.edu
-media_domain=media.YOURUNIT.edu
-media_service_domain=media.services.YOURUNIT.edu
-online_domain=online.YOURUNIT.edu
-online_service_domain=online.services.YOURUNIT.edu
-
+# if you run through elmsln-preinstall.sh it will generate this file template
+# university / institution deploying this instance
 university='youruniversityabrev'
 host='yu'
 emailending='YOURUNIT.edu'
@@ -16,33 +7,33 @@ address='YOURUNIT.edu'
 serviceaddress='services.YOURUNIT.edu'
 serviceprefix='data.'
 protocol="https"
-#email that the site uses to send mail
+# email that the site uses to send mail
 site_email=admin@$emailending
-#administrator e-mail or alias
+# administrator e-mail or alias
 admin=admin@$emailending
 
-#where is elmsln?
-elmsln=/var/www/elmsln
-#database superuser credentials
+# database superuser credentials
 dbsu=root
 dbsupw=password
-#www user, what does apache run as? www-data and apache are common
+# www user, what does apache run as? www-data and apache are common
 wwwuser=apache
-#webgroup, usually admin if sharing with other developers else leave root
+# webgroup, usually admin if sharing with other developers else leave root
 webgroup=root
 
-#comment out the following if you plan to use SSO
-send_requester_pw=yes
+# uncomment the following if you are not using SSO
+#send_requester_pw=yes
+# where is elmsln installed, not recommended to move from here
+elmsln=/var/www/elmsln
 
-#these vars shouldn't need changing if $elmsln is set properly
+# these vars shouldn't need changing if $elmsln is set properly
 webdir=$elmsln/domains
-#jobs location where job files write to
+# jobs location where job files write to
 fileloc=$elmsln/config/jobs
-#hosts to allow split groups of elmsln based on college / group
+# hosts to allow split groups of elmsln based on college / group
 hostfile=$elmsln/config/scripts/drush-create-site/hosts
-#compiled drupal "stacks"
+# compiled drupal "stacks"
 stacks=$elmsln/core/dslmcode/stacks
-#location of drupal private files
+# location of drupal private files
 drupal_priv=$elmsln/config/private_files
-#configsdir
+# configsdir
 configsdir=$elmsln/config
