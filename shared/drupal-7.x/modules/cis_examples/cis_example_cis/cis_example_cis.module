@@ -181,12 +181,6 @@ function cis_example_cis_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_cis_service_instance_options_alter().
  */
 function cis_example_cis_cis_service_instance_options_alter(&$options, $course, $service) {
-  // disable pathauto
-  $options['dis'][] = 'pathauto';
-  $options['dis'][] = 'path';
-  // uninstall these items
-  $options['pm-uninstall'][] = 'pathauto';
-  $options['pm-uninstall'][] = 'path';
   // enable example authentication / connection mechanisms
   $options['en'][] = 'cis_example_utility';
   $options['en'][] = 'cis_example_cis_service';
