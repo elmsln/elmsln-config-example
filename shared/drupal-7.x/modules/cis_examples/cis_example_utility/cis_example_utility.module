@@ -181,10 +181,18 @@ function _cis_example_utility_section_parts($section) {
     if (isset($tmp[1])) {
       // semester / campus are second split
       $tmp = str_split($tmp[1], 2);
-      // pull out semester code
-      $semester = $tmp[0];
-      // pull out campus code
-      $campus = $tmp[1];
+      if (count($tmp) == 2) {
+        // pull out semester code
+        $semester = $tmp[0];
+        // pull out campus code
+        $campus = $tmp[1];
+      }
+      else {
+        // pull out semester code
+        $semester = 'sem';
+        // pull out campus code
+        $campus = 'camp';
+      }
       // set all values from those calculated above
       $parts['year'] = $year;
       $parts['semester'] = $semester;
