@@ -13,3 +13,4 @@ _nondrupal/piwik/*
 shared/drupal-7.x/modules/_elmsln_scripted/
 stacks/*/sites/*/files
 stacks/*/sites/*/*/files
+sftp-config.json
