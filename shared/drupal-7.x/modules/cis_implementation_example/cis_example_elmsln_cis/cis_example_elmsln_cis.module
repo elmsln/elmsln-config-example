@@ -3,8 +3,6 @@
  * Implements hook_cis_service_instance_options_alter().
  */
 function cis_example_elmsln_cis_cis_service_instance_options_alter(&$options, $course, $service) {
-  // we centralize our watchdogs
-  //$options['en'][] = 'cis_remote_watchdog';
   // modules we require for all builds
   $options['en'][] = 'cis_example_elmsln_settings';
   $options['en'][] = 'cis_service_restws';
