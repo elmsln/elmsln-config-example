@@ -25,6 +25,7 @@ $conf['cache_class_cache_token'] = 'DrupalAPCCache';
 $conf['cache_class_cache_views'] = 'DrupalAPCCache';
 $conf['cache_class_cache_path_breadcrumbs'] = 'DrupalAPCCache';
 $conf['cache_class_cache_path'] = 'DrupalAPCCache';
+$conf['cache_class_cache_book'] = 'DrupalAPCCache';
 */
 # Default DB for the ones that change too frequently and are small
 $conf['cache_default_class']    = 'DrupalDatabaseCache';
