@@ -49,8 +49,8 @@ function cis_example_cis_form_alter(&$form, &$form_state, $form_id) {
   // alter settings specific to CIS on quick launch page
   if ($form_id == 'cis_helper_quick_setup_page') {
     // convert campus to select field with options
-    $form['details']['section']['campus']['#type'] = 'select';
-    $form['details']['section']['campus']['#options'] = _cis_example_utility_campus_list();
+    $form['optional']['section']['campus']['#type'] = 'select';
+    $form['optional']['section']['campus']['#options'] = _cis_example_utility_campus_list();
     // handle LTI request if one is detected
     if (isset($_GET['lti_launch'])) {
       $form['course']['#visible'] = FALSE;
@@ -96,26 +96,26 @@ function cis_example_cis_form_alter(&$form, &$form_state, $form_id) {
       // TODO: make a UI as to when to use this
       $form['details']['services']['#default_value'] = array($services['courses']);
       // populate the offering semester
-      $form['details']['offering']['semester']['#default_value'] = $lti['section']['semester'];
+      $form['optional']['offering']['semester']['#default_value'] = $lti['section']['semester'];
       // collapse offering
-      $form['details']['offering']['#collapsed'] = TRUE;
+      $form['optional']['offering']['#collapsed'] = TRUE;
       $populated[] = array(t('Semester'), $lti['section']['semester']);
       // populate the offering year
-      $form['details']['offering']['year']['#default_value'] = $lti['section']['year'];
+      $form['optional']['offering']['year']['#default_value'] = $lti['section']['year'];
       $populated[] = array(t('Year'), $lti['section']['year']);
       // collapse section
-      $form['details']['section']['#collapsed'] = TRUE;
+      $form['optional']['section']['#collapsed'] = TRUE;
       // populate section information
-      $form['details']['section']['access_string']['#default_value'] = $lti['section']['string'];
+      $form['optional']['section']['access_string']['#default_value'] = $lti['section']['string'];
       $populated[] = array(t('lms section'), $lti['section']['string']);
       // populate instructor from LTI launch user
-      $form['details']['section']['instructor']['#default_value'] = $lti['user']['name'];
+      $form['optional']['section']['instructor']['#default_value'] = $lti['user']['name'];
       $populated[] = array(t('Instructor'), $lti['user']['name']);
       // set section number
-      $form['details']['section']['number']['#default_value'] = $lti['section']['number'];
+      $form['optional']['section']['number']['#default_value'] = $lti['section']['number'];
       $populated[] = array(t('Section number'), $lti['section']['number']);
       // set campus code
-      $form['details']['section']['campus']['#default_value'] = $lti['section']['campus'];
+      $form['optional']['section']['campus']['#default_value'] = $lti['section']['campus'];
       $populated[] = array(t('Campus code'), $lti['section']['campus']);
       // add additional js to hide these elements from view
       //drupal_add_js(drupal_get_path('module', 'cis_example_cis') .'/js/cis_example_cis.js');
