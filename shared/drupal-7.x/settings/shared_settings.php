@@ -8,6 +8,9 @@
 /*
 #$conf['apc_show_debug'] = TRUE;
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/apc/drupal_apc_cache.inc';
+$conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/authcache.cache.inc';
+$conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/modules/authcache_builtin/authcache_builtin.cache.inc';
+
 # APC as default container, others are targetted per bin
 #$conf['cache_default_class'] = 'DrupalAPCCache';
 # APC as default, so these can be commented out
