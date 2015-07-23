@@ -208,16 +208,6 @@ function _cis_example_utility_section_parts($section) {
 }
 
 /**
- * Return a list of all campus.
- */
-function _cis_example_utility_campus_list() {
-  return array(
-    'c1' => 'Campus 1',
-    'c2' => 'Campus 2',
-  );
-}
-
-/**
  * Return a list of semesters
  */
 function _cis_example_utility_semester_list() {

@@ -48,9 +48,6 @@ function cis_example_cis_cis_quick_submit_alter(&$section, &$offering) {
 function cis_example_cis_form_alter(&$form, &$form_state, $form_id) {
   // alter settings specific to CIS on quick launch page
   if ($form_id == 'cis_helper_quick_setup_page') {
-    // convert campus to select field with options
-    $form['optional']['section']['campus']['#type'] = 'select';
-    $form['optional']['section']['campus']['#options'] = _cis_example_utility_campus_list();
     // handle LTI request if one is detected
     if (isset($_GET['lti_launch'])) {
       $form['course']['#visible'] = FALSE;
@@ -165,15 +162,6 @@ function cis_example_cis_form_alter(&$form, &$form_state, $form_id) {
         }
       }
     }
-  }
-  // set campus to example specific ones on field form
-  if ($form_id == 'field_ui_field_edit_form' && isset($form_state['field']['field_campus'])) {
-    $campuses = _cis_example_utility_campus_list();
-    $values = array();
-    foreach ($campuses as $code => $name) {
-      $values[] = $code . '|' . $name;
-    }
-    $form['field']['settings']['allowed_values']['#default_value'] = implode("\n", $values);
   }
 }
 
