@@ -91,7 +91,7 @@ function cis_example_cis_form_alter(&$form, &$form_state, $form_id) {
       // collapse details area by default to clean up form
       $form['details']['#collapsed'] = TRUE;
       // set default service to course flow
-      $services = _cis_helper_assemble_entity_list('node', 'service', 'field_machine_name', 'nid');
+      $services = _cis_connector_assemble_entity_list('node', 'service', 'field_machine_name', 'nid');
       // currently, course is the only default
       // TODO: make a UI as to when to use this
       $form['details']['services']['#default_value'] = array($services['courses']);
