@@ -10,9 +10,11 @@
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/apc/drupal_apc_cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/authcache.cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/modules/authcache_builtin/authcache_builtin.cache.inc';
+$conf['cache_backends'][] = 'sites/all/modules/ulmus/apdqc/apdqc.cache.inc';
+$conf['cache_default_class'] = 'APDQCache';
+$conf['lock_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.lock.inc';
+$conf['session_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.session.inc';
 
-# APC as default container, others are targetted per bin
-#$conf['cache_default_class'] = 'DrupalAPCCache';
 # APC as default, so these can be commented out
 $conf['cache_class_cache'] = 'DrupalAPCCache';
 $conf['cache_class_cache_admin_menu'] = 'DrupalAPCCache';
@@ -40,9 +42,9 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 // this should always be true of ELMSLN connected systems but just be aware
 // of this in case your doing any prefixing or crazy stuff like connecting to
 // multiple databases
-$databases['default']['default']['init_commands'] = array(
-  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
-);
+$databases['default']['default']['init_commands']['isolation'] = "SET SESSION tx_isolation='READ-COMMITTED'";
+$databases['default']['default']['init_commands']['lock_wait_timeout'] = "SET SESSION innodb_lock_wait_timeout = 20";
+$databases['default']['default']['init_commands']['wait_timeout'] = "SET SESSION wait_timeout = 600";
 
 // fast 404 to make advagg happy in the event fast 404 is default
 // we may do this in the future, right now just make sure the setting is correct
