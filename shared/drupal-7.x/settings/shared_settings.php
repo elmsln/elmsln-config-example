@@ -7,13 +7,14 @@
 # Comment this back in for apc super fast support, not all systems support this
 /*
 #$conf['apc_show_debug'] = TRUE;
+$conf['cache_backends'][] = 'sites/all/modules/ulmus/apdqc/apdqc.cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/apc/drupal_apc_cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/authcache.cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/modules/authcache_builtin/authcache_builtin.cache.inc';
-$conf['cache_backends'][] = 'sites/all/modules/ulmus/apdqc/apdqc.cache.inc';
+#APDQCache
 $conf['cache_default_class'] = 'APDQCache';
-$conf['lock_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.lock.inc';
 $conf['session_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.session.inc';
+$conf['lock_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.lock.inc';
 
 # APC as default, so these can be commented out
 $conf['cache_class_cache'] = 'DrupalAPCCache';
