@@ -7,6 +7,9 @@ if (isset($conf['restws_basic_auth_user_regex'])) {
   $conf['bakery_is_master'] = TRUE;
 }
 
+// httprl setting to avoid really long timeouts
+$conf['httprl_install_lock_time'] = 1;
+
 # env indicator - useful when working on multiple environments
 #$conf['environment_indicator_overwrite'] = TRUE;
 #$conf['environment_indicator_overwritten_name'] = 'Dev: Local';
