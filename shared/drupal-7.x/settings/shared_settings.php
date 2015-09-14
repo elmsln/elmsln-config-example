@@ -9,6 +9,8 @@ if (isset($conf['restws_basic_auth_user_regex'])) {
 
 // httprl setting to avoid really long timeouts
 $conf['httprl_install_lock_time'] = 1;
+// make authcache happy with the safer controller if we're using it
+$conf['authcache_p13n_frontcontroller_path'] = 'authcache.php';
 
 # env indicator - useful when working on multiple environments
 #$conf['environment_indicator_overwrite'] = TRUE;
