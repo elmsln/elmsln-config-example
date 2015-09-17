@@ -11,6 +11,17 @@ if (isset($conf['restws_basic_auth_user_regex'])) {
 $conf['httprl_install_lock_time'] = 1;
 // make authcache happy with the safer controller if we're using it
 $conf['authcache_p13n_frontcontroller_path'] = 'authcache.php';
+// you might need this section if doing anything with reverse proxies
+/*if ( (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on')
+  || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+  || (isset($_SERVER['HTTP_HTTPS']) && $_SERVER['HTTP_HTTPS'] == 'on')
+) {
+  $_SERVER['HTTPS'] = 'on';
+}*/
+// you might need to set this for varnish and authcache to be happy
+// it assumes that the browser has javascript so it can deliver via ajax
+// commented out by default because we don't like to assume that unless we have to
+#$_COOKIE['has_js'] = TRUE;
 
 # env indicator - useful when working on multiple environments
 #$conf['environment_indicator_overwrite'] = TRUE;
