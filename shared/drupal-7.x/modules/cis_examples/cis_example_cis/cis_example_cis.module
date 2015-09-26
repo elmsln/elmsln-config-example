@@ -173,7 +173,7 @@ function cis_example_cis_cis_service_instance_options_alter(&$options, $course, 
   $options['en'][] = 'cis_example_utility';
   $options['en'][] = 'cis_example_cis_service';
   // check on method of access for potential features to revert
-  if (in_array($course->field_method_of_access['und'][0]['value'], array('authenticated', 'code', 'lms'))) {
+  if (isset($course->field_method_of_access['und']) && in_array($course->field_method_of_access['und'][0]['value'], array('authenticated', 'code', 'lms'))) {
     $options['fr'][] = 'cis_account_required';
     if ($course->field_method_of_access['und'][0]['value'] != 'authenticated') {
       $options['fr'][] = 'cis_lms_required';
