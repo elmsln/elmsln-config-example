@@ -36,8 +36,8 @@ $conf['cache_backends'][] = 'sites/all/modules/ulmus/apdqc/apdqc.cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/authcache.cache.inc';
 $conf['cache_backends'][] = 'sites/all/modules/ulmus/authcache/modules/authcache_builtin/authcache_builtin.cache.inc';
 
-$conf['session_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.session.inc';
-$conf['lock_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.lock.inc';
+#$conf['session_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.session.inc';
+#$conf['lock_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.lock.inc';
 /*
 # APC as default, so these can be commented out
 $conf['cache_class_cache'] = 'DrupalAPCCache';
