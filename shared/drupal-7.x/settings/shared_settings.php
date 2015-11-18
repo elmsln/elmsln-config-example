@@ -11,6 +11,18 @@ if (isset($conf['restws_basic_auth_user_regex'])) {
 $conf['httprl_install_lock_time'] = 1;
 // make authcache happy with the safer controller if we're using it
 $conf['authcache_p13n_frontcontroller_path'] = 'authcache.php';
+/*
+// CDN support through automatic variable generation
+$tmp = explode('.', $base_url);
+if (isset($tmp[0])) {
+  $stack = str_replace('https://', '', str_replace('http://', '', $tmp[0]));
+  $conf['cdn_status'] = 2;
+  $tmp2 = explode('/', $base_url);  $tmpbase = $tmp2[2];
+  $conf['cdn_basic_mapping'] = $tmp2[0] . '//' . str_replace($stack, 'cdn1', $tmpbase) . '/' . $stack  . "\n";  $conf['cdn_basic_mapping'] .= $tmp2[0] . '//' . str_replace($stack, 'cdn2', $tmpbase) . '/' . $stack  . "\n"; 
+  $conf['cdn_basic_mapping'] .= $tmp2[0] . '//' . str_replace($stack, 'cdn3', $tmpbase) . '/' . $stack  . "\n"; 
+  $conf['cdn_basic_mapping_https'] = str_replace('http://', 'https://', $conf['cdn_basic_mapping']);
+}
+ */
 // you might need this section if doing anything with reverse proxies
 /*if ( (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on')
   || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
