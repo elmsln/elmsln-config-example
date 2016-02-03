@@ -79,7 +79,6 @@ $conf['cache_class_cache_form'] = 'APDQCache';
 // of this in case your doing any prefixing or crazy stuff like connecting to
 // multiple databases
 $databases['default']['default']['init_commands']['isolation'] = "SET SESSION tx_isolation='READ-COMMITTED'";
-$databases['default']['default']['init_commands']['lock_wait_timeout'] = "SET SESSION innodb_lock_wait_timeout = 20";
 $databases['default']['default']['init_commands']['wait_timeout'] = "SET SESSION wait_timeout = 600";
 
 // fast 404 to make advagg happy in the event fast 404 is default
