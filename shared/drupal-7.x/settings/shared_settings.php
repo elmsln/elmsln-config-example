@@ -1,4 +1,12 @@
 <?php
+// This is the shared settings file which allows you to globally override ELMSLN core
+// settings that are applied universally to all systems creates. Use this in order
+// to simplify the centralization of settings you want to apply everywhere automatically
+// without having to invoke them on every site. Some examples are provided where this is useful.
+
+// re-enable the legacy zurb foundation components css/js
+//$conf['foundation_access_legacy'] = TRUE;
+
 /*
 // CDN support through automatic variable generation
 $tmp = explode('.', $base_url);
@@ -27,11 +35,6 @@ if (isset($tmp[0])) {
 #$conf['environment_indicator_overwrite'] = TRUE;
 #$conf['environment_indicator_overwritten_name'] = 'Dev: Local';
 #$conf['environment_indicator_overwritten_color'] = '#42b96a';
-
-// eliminate deadlocks, these may move into core at some point but are
-// currently ahead of what's formally supported
-#$conf['session_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.session.inc';
-#$conf['lock_inc'] = 'sites/all/modules/ulmus/apdqc/apdqc.lock.inc';
 
 // fast 404 to make advagg happy in the event fast 404 is default
 // we may do this in the future, right now just make sure the setting is correct
