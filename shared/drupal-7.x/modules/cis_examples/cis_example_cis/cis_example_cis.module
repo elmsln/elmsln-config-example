@@ -182,8 +182,6 @@ function cis_example_cis_cis_service_instance_options_alter(&$options, $course, 
   // for mooc enable these specific modifications to the university
   if ($service->field_distribution['und'][0]['value'] == 'mooc') {
     $options['en'][] = 'cis_example_mooc';
-    // require WCAG 2.0
-    $options['en'][] = 'textbook_wcag20aa';
   }
 }
 
