@@ -4,6 +4,11 @@
 // to simplify the centralization of settings you want to apply everywhere automatically
 // without having to invoke them on every site. Some examples are provided where this is useful.
 
+// fastest way to get tincan integration across the network
+// $conf['tincanapi_endpoint'] = '';
+// $conf['tincanapi_auth_user'] = '';
+// $conf['tincanapi_auth_password'] = '';
+
 // re-enable the legacy zurb foundation components css/js
 //$conf['foundation_access_legacy'] = TRUE;
 
