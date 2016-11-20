@@ -12,6 +12,11 @@
 // re-enable the legacy zurb foundation components css/js
 //$conf['foundation_access_legacy'] = TRUE;
 
+// you can change this to modify the global profile as to where "people" is
+//$conf['elmsln_global_profile'] = 'cis';
+// change the bakery authority for all other systems to be CIS instead of CPR / people
+//$conf['elmsln_bakery_authority'] = 'cis';
+//
 /*
 // CDN support through automatic variable generation
 $tmp = explode('.', $base_url);
