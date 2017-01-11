@@ -16,6 +16,11 @@
 //$conf['elmsln_global_profile'] = 'cis';
 // change the bakery authority for all other systems to be CIS instead of CPR / people
 //$conf['elmsln_bakery_authority'] = 'cis';
+// this prevents users from losing their access if they no longer appear in the section
+// which can help with alternate access gaining / removing workflows as well as safe-gaurd
+// against bugginess in internal synchronization routines
+//$conf['cis_section_strict_access'] = FALSE;
+
 //
 /*
 // CDN support through automatic variable generation
