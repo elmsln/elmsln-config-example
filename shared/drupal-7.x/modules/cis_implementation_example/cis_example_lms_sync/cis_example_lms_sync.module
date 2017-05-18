@@ -26,7 +26,7 @@ function cis_example_lms_sync_cis_section_build_roster($section) {
 /**
  * Implements hook_cis_section_user_insert_alter().
  */
-function cis_example_lms_sync_cis_section_user_insert_alter(&$fields) {
+function cis_example_lms_sync_cis_section_user_insert_alter(&$fields, $userdata) {
   $fields['mail'] = _cis_example_utility_name_to_email($fields['name']);
   $fields['init'] = $fields['mail'];
 }
