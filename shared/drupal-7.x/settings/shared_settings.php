@@ -11,6 +11,8 @@
 
 // re-enable the legacy zurb foundation components css/js
 //$conf['foundation_access_legacy'] = TRUE;
+// re-enable the legacy materializecss components css/js
+//$conf['materializecss_legacy'] = TRUE;
 
 // you can change this to modify the global profile as to where "people" is
 //$conf['elmsln_global_profile'] = 'cis';
@@ -21,19 +23,6 @@
 // against bugginess in internal synchronization routines
 //$conf['cis_section_strict_access'] = FALSE;
 
-//
-/*
-// CDN support through automatic variable generation
-$tmp = explode('.', $base_url);
-if (isset($tmp[0])) {
-  $stack = str_replace('https://', '', str_replace('http://', '', $tmp[0]));
-  $conf['cdn_status'] = 2;
-  $tmp2 = explode('/', $base_url);  $tmpbase = $tmp2[2];
-  $conf['cdn_basic_mapping'] = $tmp2[0] . '//' . str_replace($stack, 'cdn1', $tmpbase) . '/' . $stack  . "\n";  $conf['cdn_basic_mapping'] .= $tmp2[0] . '//' . str_replace($stack, 'cdn2', $tmpbase) . '/' . $stack  . "\n";
-  $conf['cdn_basic_mapping'] .= $tmp2[0] . '//' . str_replace($stack, 'cdn3', $tmpbase) . '/' . $stack  . "\n";
-  $conf['cdn_basic_mapping_https'] = str_replace('http://', 'https://', $conf['cdn_basic_mapping']);
-}
- */
 // you might need this section if doing anything with reverse proxies
 /*if ( (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on')
   || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
@@ -41,7 +30,6 @@ if (isset($tmp[0])) {
 ) {
   $_SERVER['HTTPS'] = 'on';
 }*/
-// you might need to set this for varnish and authcache to be happy
 // it assumes that the browser has javascript so it can deliver via ajax
 // commented out by default because we don't like to assume that unless we have to
 #$_COOKIE['has_js'] = TRUE;
