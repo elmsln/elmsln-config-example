@@ -19,6 +19,9 @@ ErrorDocument 404 /index.php
 # Set the default handler.
 DirectoryIndex index.php index.html index.htm
 
+# this serves complex media and is intended to be embedded elsewhere
+# allow CORS to pass through nicely
+Header set Access-Control-Allow-Origin "*"
 # Override PHP settings that cannot be changed at runtime. See
 # sites/default/default.settings.php and drupal_environment_initialize() in
 # includes/bootstrap.inc for settings that can be changed at runtime.
