@@ -42,3 +42,7 @@
 // fast 404 to make advagg happy in the event fast 404 is default
 // we may do this in the future, right now just make sure the setting is correct
 //$conf['404_fast_paths_exclude'] = '/\/(?:styles)\// to /\/(?:styles|advagg_(cs|j)s)\//';
+
+// Bakery SSO - This is required to allow Bakery to logout users across the network.
+// Set this to your base domain name with a preceding dot.
+// $cookie_domain = '.example.com';
