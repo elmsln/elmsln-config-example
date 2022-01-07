@@ -42,3 +42,7 @@
 // fast 404 to make advagg happy in the event fast 404 is default
 // we may do this in the future, right now just make sure the setting is correct
 //$conf['404_fast_paths_exclude'] = '/\/(?:styles)\// to /\/(?:styles|advagg_(cs|j)s)\//';
+
+// Emoji support via DB table support
+#$databases['default']['default']['charset'] = "utf8mb4";
+#$databases['default']['default']['collation'] = "utf8mb4_general_ci";
